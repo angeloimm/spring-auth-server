@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Default Admin</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+          text-align: left;
+        }
+
+        .col-75 {
+          float: left;
+          width: 50%;
+          margin-top: 6px;
+         }
+
+         .row::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 800px;
+            margin: 2vh auto;
+            padding: 2vh;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        form input[type=text],
+        form input[type=password],
+        form select {
+            width: 75%;
+            padding: 1.5vh;
+            margin-bottom: 3vh;
+            border: 1px solid #ded5d5;
+            border-radius: 4px;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+         }
+
+        input[type=submit] {
+          width: 100%;
+          background-color: #007bff;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          }
+  /* Adjust container size for smaller screens */
+    @media (max-width: 600px) {
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="post" th:action="@{/protected/users/addDefaultAdmin}" th:object="${utente}">
+        <div class="row">
+            <div class="col-25">
+                <label>Username</label>
+            </div>
+            <div class="col-75">
+                <input th:field="*{username}" type="text"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label>Password</label>
+            </div>
+            <div class="col-75">
+                <input th:field="*{password}" type="password"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label>Name</label>
+            </div>
+            <div class="col-75">
+                <input th:field="*{name}" type="text"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label>Last Name</label>
+            </div>
+            <div class="col-75">
+                <input th:field="*{lastName}" type="text"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label>Email</label>
+            </div>
+            <div class="col-75">
+                <input th:field="*{email}" type="text"/>
+            </div>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

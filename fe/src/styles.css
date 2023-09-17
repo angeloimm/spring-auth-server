@@ -1,0 +1,402 @@
+/* body */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    /*overflow:hidden !important;*/
+}
+
+body {
+    /* padding-top: 80px; */
+    /* the size of the padding-top need to be the one of the navbar */
+}
+
+
+/* Main containers */
+
+.header {
+    /* -webkit-box-shadow: 0 5px 15px rgba(1,1,1,.7);*/
+    /* makes a grey shadow below the navbar */
+    /*box-shadow: 0 5px 15px rgba(1,1,1,.7); */
+}
+
+.bodyContainer {
+    height: 100%;
+    width: auto;
+    /* need to overwrite the width set by bootstrap */
+}
+
+.mapContainer {
+    height: 100%;
+}
+
+div#map {
+    height: 100%;
+    /* to specify the full height for the map, works only if height is set in body and parent divs */
+    background-color: #b5d0d0;
+    padding-right: 0px;
+    /* need to overwrite the padding-right and padding-left set by bootstrap */
+    padding-left: 0px;
+    /* margin-top: 10px;*/
+}
+
+div#panelLeft {
+    position: absolute;
+    top: 80px;
+    padding-top: 8px;
+    /* needed to move the content below the gray shadow specified in the header */
+    height: calc(100% - 80px);
+    /* calc is used to substract the height of the navbar */
+    width: 48px;
+    background-color: /*#fafafa*/
+    transparent;
+    opacity: 0.92;
+    -webkit-transition: width 0.6s;
+    transition: width 0.6s;
+    z-index: 1;
+}
+
+div#panelRight {
+    position: absolute;
+    top: 100px;
+    right: 8px;
+    padding-top: 8px;
+    /* needed to move the content below the gray shadow specified in the header */
+    height: calc(100% - 150px);
+    /* calc is used to substract the height of the navbar */
+    width: 48px;
+    /*background-color: #fafafa;*/
+    opacity: 0.92;
+    -webkit-transition: width 0.6s;
+    transition: width 0.6s;
+    z-index: 1;
+}
+
+
+/* Collapse buttons */
+
+div#collapseBtnXs {
+    position: absolute;
+    /*bottom: 10px;*/
+    top: 100px;
+    left: 8px;
+    z-index: 2;
+}
+
+div#collapseBtnXs button {
+    font-weight: bold;
+    padding: 4px;
+    width: 52px;
+    height: 42px;
+    opacity: 0.92;
+    font-weight: bold;
+    background-color: #047387;
+    border-radius: 0;
+    border: 1px solid #50a6b5;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+div#collapseBtnLeft {
+    /*float:left;*/
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+div#collapseBtnLeft button {
+    font-weight: bold;
+    /* background-color:#fff;*/
+    background-color: #047387;
+    border-radius: 0;
+    margin: 2px;
+    border: 1px solid #50a6b5;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    left: -12px;
+    opacity: 0.92;
+}
+
+div#collapseBtnRight {
+    /*float:right;*/
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+div#collapseBtnRight button {
+    font-weight: bold;
+    margin: 2px;
+    border: 3px solid #50a6b5;
+    position: relative;
+    right: 10px;
+    top: -20px;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+div#panelContent {
+    opacity: 1;
+    position: relative;
+    /*left: -210px;*/
+    right: 349px;
+    top: -20px;
+    /*width: 280px;*/
+    height: 100%;
+    /*overflow: auto;*/
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+div#panelTool {
+    opacity: 1;
+    position: absolute;
+    left: 40px;
+    top: 100px;
+    width: 480px;
+    height: 52px;
+    /*overflow: auto;*/
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+div#panelSearch {
+    opacity: 1;
+    position: absolute;
+    left: 34px;
+    top: 30px;
+    width: 280px;
+    height: calc(100% - 150px);
+    /*overflow: auto;*/
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+div#panelFilter {
+    position: absolute;
+    left: 41px;
+    top: 123px;
+    width: 480px;
+    height: 52px;
+    /* overflow: auto; */
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.main-logo-rc {
+    position: absolute;
+    right: 0;
+    top: 42px;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.fa {
+    font-size: 26px;
+    padding: 2px;
+    color: white;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    height: 42px;
+    margin-left: 8px;
+    border-radius: 0px;
+    border: 2px solid #50a6b5;
+    width: 420px;
+    padding: 0 15px;
+}
+
+.btn-resp {
+    padding: 0;
+}
+
+.btnControlMap {
+    display: inline;
+}
+
+.vertical-btn {
+    text-align: center;
+    opacity: 0.92;
+    width: 52px;
+    position: relative;
+    left: 0px;
+    /*;background-color: #fff;border-radius: 3px;border: 2px solid #047387;color: #333;font-size: 80%;padding:10px 0;*/
+}
+
+.tooltip-mappa {
+    left: 17px;
+    z-index: 1000;
+    text-align: center;
+    position: absolute;
+    top: -24px;
+    border: 2px solid #047387;
+    height: 42px;
+    background-color: #fff;
+    opacity: 0.92;
+    border-radius: 0px;
+    color: #333;
+    font-size: 80%;
+    padding: 0 10px;
+}
+
+@media all and (max-width: 767px) {
+    div#panelLeft {
+        width: 0px;
+    }
+    div#panelContent {
+        opacity: 0;
+    }
+    div#collapseBtnXs {
+        width: 100%;
+    }
+    .modal-title {
+        font-weight: 600;
+        float: left;
+        color: #047387
+    }
+    .main-logo-rc {
+        display: none;
+    }
+    .navbar-brand>img {
+        max-width: 272px;
+    }
+    /*#panel {width:0 !important;}*/
+    div#panelContent {
+        left: auto;
+        right: -14px;
+        top: 24px
+    }
+    div#panelTool {
+        right: 0;
+        top: 36px;
+    }
+    div#panelSearch {}
+    div#panelFilter {
+        left: 51px;
+        top: 74px;
+    }
+    .vertical-btn {
+        top: 44px;
+        left: 8px
+    }
+    button.btn.btn-resp.right {
+        position: absolute;
+        right: 15px;
+    }
+    .tooltip-mappa {
+        top: 38px;
+        left: 11px;
+        position: relative;
+        width: 220px;
+        height: 90px;
+        padding: 10px 0;
+    }
+    input[type="search"] {
+        position: relative;
+        top: 44px;
+        left: 9px;
+        max-width: 220px;
+    }
+}
+
+
+/* OpenLayers controls */
+
+.ol-control {
+    background-color: transparent;
+}
+
+.ol-zoom {
+    /*right: 8px;*/
+    /*top: 12px;*/
+    /*left: 60px;   */
+    /* needed to avoid the background-color of the ol zoom control spanning from the left side of the screen */
+}
+
+.ol-zoom {
+    top: initial;
+    /* needed to clear the top property specified by OpenLayers */
+    /*right: 8px;*/
+    left: -1px;
+    bottom: 10px;
+    z-index: 999999;
+    /* needed to avoid the background-color of the ol zoom control spanning from the left side of the screen */
+}
+
+.ol-control button {
+    background-color: #fafafa;
+    color: #047387;
+    border: 2px solid #047387;
+    border-radius: 0px !important;
+    width: 49px;
+    height: 28px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.ol-control button:focus,
+.ol-control button:hover {
+    background-color: white;
+}
+
+@media all and (max-width: 768px) {
+    .ol-zoom {
+        top: initial;
+        /* needed to clear the top property specified by OpenLayers */
+        /*right: 8px;*/
+        left: 4px;
+        bottom: 6px;
+        /* needed to avoid the background-color of the ol zoom control spanning from the left side of the screen */
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        float: right;
+    }
+}
+
+.ol-scale-line {
+    right: 5px;
+    left: auto;
+    background-color: #047387;
+}
+
+
+/* Hamburger button */
+
+.header button span {
+    background-color: #fff;
+}
+
+.nav-tabs-custom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.navbar {
+    min-height: 80px;
+    background-color: #047387;
+    border-bottom: 4px solid #50a6b5;
+}
+
+.navbar-nav a {
+    color: white;
+}
+
+.navbar-brand {
+    height: auto !important;
+}
+
+.navbar-toggle {
+    float: left;
+    margin-right: 0;
+}
+
+.ol-attribution.ol-unselectable.ol-control.ol-collapsed.hidden-xs {
+    display: none;
+}

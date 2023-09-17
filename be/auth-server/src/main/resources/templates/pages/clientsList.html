@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<th:block layout:fragment="page-handlebars-template">
+    <script id="templateDettaglioClient" type="text/x-handlebars-template">
+        <div class="alert alert-info">
+            <div class="row">
+                <div class="column">
+                    <label for="clientName" th:text="#{client.clientName}"></label>
+                    <input type="text" id="clientName" name="clientName" th:placeholder="#{client.clientName}" required>
+
+                    <label for="applicationName" th:text="#{client.applicationName}"></label>
+                    <input type="text" id="applicationName" name="applicationName"
+                           th:placeholder="#{client.applicationName}" required>
+
+                    <label for="enabled" th:text="#{client.enabled}"></label>
+                    <input type="text" id="enabled" name="enabled" th:placeholder="#{client.enabled}">
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="templateAzioniClient" type="text/x-handlebars-template">
+        <div class="dropdown">
+            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item modify" href="#" th:text="#{client.modify}"></a></li>
+                <li><a class="dropdown-item delete" href="#" th:text="#{client.delete}"></a></li>
+                <li><a class="dropdown-item disable" th:text="#{client.disable}"></a></li>
+            </ul>
+        </div>
+    </script>
+</th:block>
+<th:block layout:fragment="page-body">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="title-header">Elenco</h3>
+            <button class="btn btn-primary btn-block modify" id="add" th:text="#{client.add}"></button>
+        </div>
+        <table class="table row-border dataTable"
+               id="clientListTable"
+               style="width:100%"
+               th:data-client-list-url="@{/protected/clients}"
+               th:data-table-lang-url="@{/js/datatable-plugins/languages/italian.lang}">
+            <thead>
+            <tr data-id="1">
+                <th class="text-nowrap" th:text="#{client.clientId}"></th>
+                <th class="text-nowrap" th:text="#{client.clientSecret}"></th>
+                <th class="text-nowrap" th:text="#{client.clientName}"></th>
+                <th class="text-nowrap" th:text="#{client.applicationName}"></th>
+                <th class="text-nowrap" th:text="#{table.column.actions}"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div aria-hidden="true" class="modal fade" id="clientDetailsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="clientDetailModal">
+            </div>
+        </div>
+    </div>
+    <div aria-hidden="true" class="modal fade" id="confirmDelete" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="confirmDeleteModal">
+            </div>
+        </div>
+    </div>
+    </div>
+</th:block>
+<th:block layout:fragment="page-script">
+    <script th:src="@{/js/protected.clientsList.page.js}" type="text/javascript"></script>
+</th:block>
+</body>
+</html>

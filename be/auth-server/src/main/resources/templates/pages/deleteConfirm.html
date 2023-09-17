@@ -1,0 +1,32 @@
+<!-- usersForm.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/datatables/1.13.5/css/dataTables.bootstrap5.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/site.css}"/>
+</head>
+<body>
+<th:block layout:fragment="page-handlebars-template">
+    <!-- Handlebars template for the user details modal -->
+    <script id="templateConfirm" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <h5 class="modal-title">Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p th:text="#{message.delete}"></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" id="confirmModifyNo">No</button>
+            <button type="button" class="btn btn-primary" id="confirmModifyYes">Yes</button>
+        </div>
+    </script>
+</th:block>
+
+<!-- Include the userForm script -->
+<th:block layout:fragment="page-script">
+    <script th:src="@{/js/protected.deleteConfirm.js}" type="text/javascript"></script>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration scan="true">
+    <shutdownHook
+            class="ch.qos.logback.core.hook.DefaultShutdownHook"/> <!-- si occupa della chiusura dei thread rimasti attivi dopo la chiusura dell'applicazione -->
+    <appender name="consoleAppender"
+              class="ch.qos.logback.core.ConsoleAppender"> <!-- si occupa di scrivere tutti i messaggi in console -->
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.filters.path}logs/diomedee_be_test.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${log.filters.path}logs/diomedee_be_test%d{yyyy-MM-dd}.%i.log.tar.gz <!-- estensione del file + algoritmo di compressione -->
+            </fileNamePattern>
+            <maxFileSize>6MB</maxFileSize><!-- dimensione massima per il file di log -->
+            <maxHistory>50</maxHistory><!-- numero massimo di backup dei file log -->
+            <totalSizeCap>100GB</totalSizeCap><!-- memoria occupabile nella directory assegnata ai file di log -->
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="SLOW_OPERATION_LOGGER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.filters.path}logs/diomedee_be_test_slow_operation.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${log.filters.path}logs/diomedee_be_test_slow_operation%d{yyyy-MM-dd}.%i.log.tar.gz <!-- estensione del file + algoritmo di compressione -->
+            </fileNamePattern>
+            <maxFileSize>6MB</maxFileSize><!-- dimensione massima per il file di log -->
+            <maxHistory>50</maxHistory><!-- numero massimo di backup dei file log -->
+            <totalSizeCap>100GB</totalSizeCap><!-- memoria occupabile nella directory assegnata ai file di log -->
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="AUDIT_LOGGER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.filters.path}logs/diomedee_be_test_audit.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${log.filters.path}logs/diomedee_be_test_audit%d{yyyy-MM-dd}.%i.log.tar.gz <!-- estensione del file + algoritmo di compressione -->
+            </fileNamePattern>
+            <maxFileSize>6MB</maxFileSize><!-- dimensione massima per il file di log -->
+            <maxHistory>50</maxHistory><!-- numero massimo di backup dei file log -->
+            <totalSizeCap>100GB</totalSizeCap><!-- memoria occupabile nella directory assegnata ai file di log -->
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <!-- Appender asincroni di default -->
+    <appender name="ASYNC_consoleAppender"
+              class="ch.qos.logback.classic.AsyncAppender"> <!-- dichiarazione di appender asincroni  -->
+        <queueSize>262144</queueSize>
+        <appender-ref ref="consoleAppender"/>
+    </appender>
+    <appender name="ASYNC_FILE"
+              class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>262144</queueSize>
+        <appender-ref ref="FILE"/>
+    </appender>
+    <appender name="ASYNC_SLOW_OPERATION_LOGGER"
+              class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>262144</queueSize>
+        <appender-ref ref="SLOW_OPERATION_LOGGER"/>
+    </appender>
+    <appender name="ASYNC_AUDIT_LOGGER"
+              class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>262144</queueSize>
+        <appender-ref ref="AUDIT_LOGGER"/>
+    </appender>
+    <!-- Fine appender asincroni -->
+    <!-- 	<logger name="org.springframework.web.socket" level="TRACE">
+        </logger> -->
+    <logger name="it.eng" level="${asl.foggia.diomedee.eng.log.filters.level}">
+    </logger>
+    <root level="${asl.foggia.diomedee.root.log.filters.level}">
+        <appender-ref ref="ASYNC_consoleAppender"/>
+        <appender-ref ref="ASYNC_FILE"/>
+    </root>
+</configuration>

@@ -1,0 +1,137 @@
+{
+	"emptyTable":     "Nessun dato presente",
+	"info":           "Mostrati da _START_ a _END_ di _TOTAL_ elementi",
+	"infoEmpty":      "Mostrati da 0 a 0 di 0 elementi",
+	"infoFiltered":   "(filtrati da _MAX_ elementi totali)",
+	"infoThousands":  ",",
+	"lengthMenu":     "Visualizza _MENU_ elementi",
+	"loadingRecords": "Caricamento in corso...",
+	"processing":     "Elaborazione in corso...",
+	"search":         "Cerca:",
+	"zeroRecords":    "La ricerca non ha portato alcun risultato",
+	"thousands": ",",
+	"paginate": {
+		"first":    "Inizio",
+		"last":     "Fine",
+		"next":     "Prossimo",
+		"previous": "Precedente"
+	},
+	"aria": {
+		"sortAscending":  ": clicca per visualizzare risultati in ordine crescente su questa colonna",
+		"sortDescending": ": clicca per visualizzare risultati in ordine decrescente su questa colonna"
+	},
+	"autoFill": {
+		"cancel": "Annulla",
+		"fill": "Riempi le celle con <i>%d</i>",
+		"fillHorizontal": "Riempi le celle orizzontalmente",
+		"fillVertical": "Riempi le celle verticalmente"
+	},
+	"buttons": {
+		"collection": "Collezione <span class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s'/>",
+		"colvis": "Visibilità colonna",
+		"colvisRestore": "Visibilità di default",
+		"copy": "Copia",
+		"copyKeys": "Seleziona ctrl or u2318 + C per copiare i dati della tabella sul tuo sistema.<br><br> Per annullare clicca questo messaggio oppure seleziona esc.",
+		"copySuccess": {
+			"1": "Copiata 1 riga",
+			"_": "Copiate %d righe"
+		},
+		"copyTitle": "Copia",
+		"csv": "CSV",
+		"excel": "Excel",
+		"pageLength": {
+			"-1": "Mostra tutte le righe",
+			"1": "Mostra 1 riga",
+			"_": "Mostra %d righe"
+		},
+		"pdf": "PDF",
+		"print": "Print"
+	},
+	"searchBuilder": {
+		"add": "Aggiungi condizione",
+		"button": {
+			"0": "Costruzione ricerca",
+			"_": "Costruzione ricerca (%d)"
+		},
+		"clearAll": "Pulisci tutto",
+		"condition": "Condizione",
+		"conditions": {
+				"date": {
+					"after": "Prima",
+					"before": "Dopo",
+					"between": "Compresa",
+					"empty": "Vuoto",
+					"equals": "Uguale",
+					"not": "No",
+					"notBetween": "Non compresa",
+					"notEmpty": "Non vuota"
+				},
+				"moment": {
+					"after": "Dopo",
+					"before": "Prima",
+					"between": "Compresa",
+					"empty": "Vuoto",
+					"equals": "Uguale",
+					"not": "No",
+					"notBetween": "Non compresa",
+					"notEmpty": "Non vuota"
+				},
+				"number": {
+					"between": "Compreso",
+					"empty": "Vuoto",
+					"equals": "Uguale",
+					"gt": "Maggiore di",
+					"gte": "Maggiore oo uguale a",
+					"lt": "Minore di",
+					"lte": "Minore o uguale a",
+					"not": "No",
+					"notBetween": "Non compreso",
+					"notEmpty": "Non vuoto"
+				},
+				"string": {
+					"contains": "Contiene",
+					"empty": "Vuota",
+					"endsWith": "Finisce con",
+					"equals": "Uguale",
+					"not": "No",
+					"notEmpty": "Non vuoto",
+					"startsWith": "Inizia con"
+				}
+			},
+		"data": "Dati",
+		"deleteTitle": "Cancella regola di filtro",
+		"leftTitle": "Outdent Criteria",
+		"logicAnd": "And",
+		"logicOr": "Or",
+		"rightTitle": "Indent Criteria",
+		"title": {
+			"0": "Search Builder",
+			"_": "Search Builder (%d)"
+		},
+		"value": "Value"
+	},
+	"searchPanes": {
+		"clearMessage": "Clear All",
+		"collapse": {
+			"0": "SearchPanes",
+			"_": "SearchPanes (%d)"
+		},
+		"count": "{total}",
+		"countFiltered": "{shown} ({total})",
+		"emptyPanes": "No SearchPanes",
+		"loadMessage": "Loading SearchPanes",
+		"title": "Filters Active - %d"
+	},
+	"select": {
+		"1": "%d riga selezionata",
+		"_": "%d righe selezionate",
+		"cells": {
+			"1": "1 cella selezionata",
+			"_": "%d celle selezionate"
+		},
+		"columns": {
+			"1": "1 colonna selezionata",
+			"_": "%d colonne selezionate"
+		}
+	}
+}

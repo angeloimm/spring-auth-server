@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta charset="UTF-8">
+    <title th:text="#{layout.title}"></title>
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
+    <meta name="_csrf" th:content="${_csrf.token}" th:if="${_csrf != null}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" th:if="${_csrf != null}"/>
+    <meta name="description" th:content="#{layout.metadescription}">
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/datatables/1.13.5/css/dataTables.bootstrap5.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/site.css}"/>
+</head>
+<body>
+
+<th:block layout:fragment="page-handlebars-template"></th:block>
+
+<header>
+    <div class="blue_sez" id="header-firstnav" role="presentation">
+        <div id="head_testata">
+            <div class="container">
+                        <span class="cont-logo">
+                            <img alt="Logo PNT - Piattaforma Nazionale Telemedicina"
+                                 th:src="@{/images/logo-pnt-neg.png}">
+                        </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <th:block layout:fragment="page-body"></th:block>
+</main>
+
+<footer>
+    <div class="footer"></div>
+    <!--div class="main-footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <span class="cont-logo">
+                        <img src="images/logo-footer.png" alt="Logo Footer ASP RC">
+                    </span>
+                </div>
+                <div class="col-md-3 contacts">
+                    <ul class="menu-list">
+                        <li> <p><b>Direzione Generale</b></p>  </li>
+                        <li> <p>Via Diana 3</p>  </li>
+                        <li> <p>89125 Reggio Calabria</p>  </li>
+                        <li> <p>Telefono 0965/347213</p>  </li>
+                    </ul>
+                    <ul class="menu-list">
+                        <li><p><b>Ufficio Relazioni con il Pubblico</b></p></li>
+                        <li><p>Tel. 0965.347847</p></li>
+                        <li><p><a href="mailto:urp@asprc.it " class="anchor-link">urp@asprc.it </a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div-->
+</footer>
+
+<script th:src="@{/webjars/jquery/3.6.1/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
+<script th:src="@{/webjars/font-awesome/6.2.0/js/all.min.js}" type="text/javascript"></script>
+<script th:src="@{/webjars/handlebars/4.7.7/handlebars.min.js}" type="text/javascript"></script>
+<script th:src="@{/webjars/datatables/1.13.5/js/jquery.dataTables.min.js}" type="text/javascript"></script>
+<script th:src="@{/webjars/datatables/1.13.5/js/dataTables.bootstrap5.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/layout.shared.js}" type="text/javascript"></script>
+<th:block layout:fragment="page-script"></th:block>
+<!-- Modal -->
+<div aria-hidden="true" class="modal fade" id="authServerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" id="authnServerModal">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

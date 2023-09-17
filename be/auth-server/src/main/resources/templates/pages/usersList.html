@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<th:block layout:fragment="page-handlebars-template">
+    <script id="templateDettaglioUtente" type="text/x-handlebars-template">
+        <div class="alert alert-info">
+            <div class="row">
+                <div class="column">
+                    <label for="username" th:text="#{user.username}"></label>
+                    <input type="text" id="username" name="username" th:placeholder="#{user.username}" required>
+                    <label for="name" th:text="#{user.name}"></label>
+                    <input type="text" id="name" name="name" th:placeholder="#{user.name}" required>
+
+                    <label for="lastname" th:text="#{user.lastName}"></label>
+                    <input type="text" id="lastname" name="lastName" th:placeholder="#{user.lastname}" required>
+
+                    <label for="email" th:text="#{user.email}"></label>
+                    <input type="text" id="email" name="lastName" th:placeholder="#{user.mail}" required>
+
+                    <label for="role" th:text="#{user.role}"></label>
+                    <input type="text" id="role" name="role" th:placeholder="#{user.role}">
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="templateAzioniUtente" type="text/x-handlebars-template">
+        <!--div class="alert alert-info">
+            <div class="row">
+                <div class="column">
+                    <button class="btn btn-primary btn-block modify" th:text="#{user.modify}"></button>
+                    <button class="btn btn-danger btn-block delete" th:text="#{user.delete}"></button>
+                    <button class="btn btn-success btn-block disable" th:text="#{user.disable}"></button>
+                </div>
+            </div>
+        </div-->
+        <div class="dropdown">
+            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item modify" href="#" th:text="#{user.modify}"></a></li>
+                <li><a class="dropdown-item delete" href="#" th:text="#{user.delete}"></2></li>
+                <li><a class="dropdown-item disable" th:text="#{user.disable}"></a></li>
+            </ul>
+        </div>
+    </script>
+</th:block>
+<th:block layout:fragment="page-body">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="title-header">Elenco</h3>
+            <button class="btn btn-primary btn-block modify" id="add" th:text="#{user.add}"></button>
+        </div>
+        <table class="table row-border dataTable"
+               id="userListTable"
+               style="width:100%"
+               th:data-table-lang-url="@{/js/datatable-plugins/languages/italian.lang}"
+               th:data-user-list-url="@{/protected/users}">
+            <thead>
+            <tr data-id="1">
+                <th class="text-nowrap" th:text="#{user.name}"></th>
+                <th class="text-nowrap" th:text="#{user.lastname}"></th>
+                <th class="text-nowrap" th:text="#{user.username}"></th>
+                <th class="text-nowrap" th:text="#{user.mail}"></th>
+                <th class="text-nowrap" th:text="#{table.column.actions}"></th>
+                <th class="text-nowrap" th:text="#{id}"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div aria-hidden="true" class="modal fade" id="userDetailsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="userDetailModal">
+            </div>
+        </div>
+    </div>
+    <div aria-hidden="true" class="modal fade" id="confirmDelete" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="confirmDeleteModal">
+            </div>
+        </div>
+    </div>
+    </div>
+</th:block>
+<th:block layout:fragment="page-script">
+    <script th:src="@{/js/protected.usersList.page.js}" type="text/javascript"></script>
+</th:block>
+
+</body>
+</html>

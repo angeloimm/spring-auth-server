@@ -1,0 +1,383 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+/*
+.bg-custom{
+	border-color: rgb(0, 102, 204);
+	background-color: rgb(0, 49, 131);
+}
+.page-header {
+    font-size: 1.33em;
+    font-weight: bold;
+    color: #000000;
+    padding: 20px 10px;
+    padding-left: 10px;
+    background-color: #f3f3f3;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 60px 0px 0px 0px;
+    border: 1px solid #d8d8d8;
+    border-top-color: rgb(216, 216, 216);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: rgb(216, 216, 216);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom: 0px;
+    border-top: 3px solid #990000;
+    border-radius: 0;
+    padding-left: 15px;
+    float: left;
+}
+.sael-fieldset-legend{
+	background-color: #007bff !important;
+	color: white;
+	font-size: 1.2rem;
+    padding: 5px 10px;
+}
+.sael-inner-fieldset-legend{
+	background-color: rgb(0, 49, 131) !important;
+	color: white;	
+}
+.sael-inner-fieldset-legend-2{
+	background-color: #668BB5 !important;
+	color: white;	
+}
+.sael-inner-fieldset{
+	padding: 20px;
+}
+.has-error,
+.has-error label,
+.has-error input,
+.has-error textarea {
+    color: red;
+    border-color: red;
+}
+
+#dettaglioResponsabileEnte.container{
+    padding:5%;
+}
+
+#dettaglioResponsabileEnte.container .details{
+    border-left:3px solid #ded4da;
+}
+#dettaglioResponsabileEnte.container .details p{
+    font-size:15px;
+    font-weight:bold;
+}
+#dropzone {
+    background: rgb(0, 49, 131) !important;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+#dropzone.in {
+    font-size: larger;
+}*/
+/* #dropzone.hover {
+    background: lawngreen;
+} */
+/*
+#dropzone.fade {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}
+.margin-top-31{
+	margin-top: 31px;
+}
+.font-1rem{
+	font-size: 1rem;
+}
+.sagel-body, .sagel-body .btn{
+	font-size: 0.9rem;
+}
+.margin-top10{
+	margin-top: 10px;
+}
+
+.sagel-notification{
+	padding: 10px;
+}
+
+*/
+
+/* my css */
+/*.justify-content-center{
+	justify-content: center;
+}*/
+.blue_sez {
+    background-color: #1c61c9;
+}
+header #head_testata {
+    height: 76px;
+}
+.cont-logo {
+    position: relative;
+    top: 17px;
+    left: 0px;
+}
+.title-header {
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size: 28px;
+    line-height: 48px;
+    padding-top:24px;
+    padding-bottom:0px;
+}
+.login h3.title-header {
+      padding-bottom:15px;
+  }
+.container-form{
+	margin: auto;
+    padding: 0 60px;
+}
+.container.login h1.title-header {
+    padding-top: 180px;
+    padding-bottom: 0;
+    letter-spacing: -1px;
+    font-size: 40px;
+    line-height: 48px;
+}
+.container #userListTable_wrapper {
+    padding-top:42px;
+}
+
+/*h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
+    margin-top: 0;
+}
+h3.title-header {
+    font-weight: 600;
+    padding:30px 0px 30px 0px;
+    color: #01283A;
+    font-size: 1.6em;
+    margin: 0;
+    line-height: 1.42857143;
+    background-color: #fff;
+    font-family: 'Titillium Web', sans-serif !important;
+}*/
+
+/*h1.title-header {
+    font-weight: 700;
+    padding: 20px;
+    color: #01283A;
+    font-size: 2.2em;
+    line-height: 1.42857143;
+    background-color: #fff;
+}*/
+
+
+/*
+.nav-tabs>li>a:hover, .nav-tabs>li>a.active, .nav-tabs>li>a.active:focus, .nav-tabs>li>a.active:hover, .nav-tabs>li.active>a, .nav-tabs>li.active>a.active, .nav-tabs>li.active>a.active:focus, .nav-tabs>li.active>a.active:hover {
+    font-size: 1.4em;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 600;
+    color: #1c61c9;
+    cursor: default;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    border-bottom: 2px solid #1c61c9 !important;
+}
+.icon-login-username{
+	width: 24px;
+}
+
+.input-group-text.username {
+    padding: 0.375rem 0.6rem!important;
+}
+.input-group-text.pwd {
+    padding: 0.375rem 0.8rem!important;
+}
+.btn-accedi{
+	background-color: #092A3B!important;
+    font-size: medium!important;
+    border-radius: 4px!important;
+    color: #FFF;
+}
+.btn-accedi:hover, .btn-accedi:focus-visible, .btn-accedi:active{
+	color: #FFF!important;
+	background-color: #1074D4!important;
+}*/
+
+footer {
+    padding-bottom: 0!important;
+}
+.footer {
+    background-color: #0D2C5A;
+    padding: 24px;
+}
+footer .main-footer {
+	margin-top: 80px!important;
+    width: 100%;
+    height: auto;
+    background-color: #e6e6e6;
+    padding: 16px 0 16px 0;
+    font-size: 0.85em;
+    font-family: 'Titillium Web', sans-serif !important;
+    line-height: 1.42857143;
+    color: #333;
+    border-top: #1074D4;
+    border-top-width: 7px !important;
+    border-top-style: solid;
+	background-image: url(../images/bg-login-asprc.jpg);
+	height: 100%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+footer .contacts {
+    padding: 20px 20px 0px 20px;
+    color: #FFF;
+}
+footer .contacts ul.menu-list {
+    padding: 0;
+    padding-top: 2px !important;
+    list-style: none;
+    line-height: 24px;
+}
+footer a{
+    color: #FFF;
+}
+footer a:hover{
+    font-weight:600;
+}
+/*p:last-child {
+    margin-bottom: 0;
+}
+.corsivo{
+	font-style: oblique;
+}
+*/
+@media (max-width: 400px){
+	.cont-logo img{
+		width: 200px!important;
+	}
+	h3.title-header {
+	    font-size: 1.1em!important;
+	}
+	.container h1.title-header {
+    padding-top: 0!important;
+	}
+}
+/*.mt-20 {
+   margin-top:20px;
+}
+*/
+.mt-180 {
+    margin-top:180px;
+}
+
+/*#userListTable td {
+    padding:20px 24px;
+}*/
+
+/* DATATABLE */
+.row-border.dataTable th {
+    color: #191919;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 24px 32px;
+    border-bottom: 2px solid #5C6F82;
+    line-height: 24px;
+    padding: 24px 32px;
+}
+
+.row-border.dataTable td {
+    padding: 24px 32px;
+    border-bottom: 0.5px solid #5C6F82;
+    color:#191919;
+    font-size: 18px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#userListTable_wrapper .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-content: stretch;
+}
+#userListTable_wrapper .col-sm-12.col-md-6 {
+     text-align: right;
+}
+#userListTable_wrapper .col-sm-12.col-md-6 .dataTables_filter {
+    text-align: left;
+}
+
+#userListTable_wrapper.dataTables_wrapper div.dataTables_filter label {
+    color: #2F475E;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    #userListTable_wrapper.dataTables_wrapper div.dataTables_length {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    #userListTable_wrapper.dataTables_wrapper div.dataTables_filter input {
+        min-width: 480px;
+    }
+}
+/* BTN */
+.btn {
+    border-radius:4px;
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: #1C61C9;
+}
+
+.btn-outline-primary {
+    border: 2px solid #1C61C9 !important;
+}
+
+/* MODAL */
+.modal-content {
+    padding: 32px 32px 0px 32px;
+}
+.modal-header {
+    border-bottom: none;
+    padding:0;
+}
+
+.modal-title {
+    font-family: Titillium Web;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    color: #1A1A1A;
+}
+
+.modal-body {
+    padding: 32px 0;
+}
+
+.modal-footer {
+    padding:0 32px 32px 32px;
+    border:none;
+}
+
+.icon-login-pwd{
+	width: 19px;
+    height: 20px;
+}

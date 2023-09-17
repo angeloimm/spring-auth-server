@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<th:block layout:fragment="page-handlebars-template">
+    <script id="templateDettaglioUtente" type="text/x-handlebars-template">
+        <div class="row">
+            <div class="column">
+                <label for="name" th:text="#{user.name}"></label>
+                <input type="text" id="name" name="name" th:placeholder="#{user.name}" required>
+            </div>
+        </div>
+    </script>
+    <script id="templateAzioniUtente" type="text/x-handlebars-template">
+
+        <div class="dropdown">
+            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item modify" href="#" th:text="#{user.modify}"></a></li>
+                <li><a class="dropdown-item delete" href="#" th:text="#{user.delete}">Another action</a></li>
+            </ul>
+        </div>
+
+    </script>
+</th:block>
+<th:block layout:fragment="page-body">
+    <div class="container">
+        <h3 class="title-header">Elenco</h3>
+        <table class="table row-border dataTable"
+               id="userListTable"
+               style="width:100%"
+               th:data-table-lang-url="@{/js/datatable-plugins/languages/italian.lang}"
+               th:data-user-list-url="@{/public/rest/users}">
+            <thead>
+            <tr>
+                <th class="text-nowrap" th:text="#{user.name}"></th>
+                <th class="text-nowrap" th:text="#{user.lastname}"></th>
+                <th class="text-nowrap" th:text="#{email}"></th>
+                <th class="text-nowrap" th:text="#{table.column.actions}"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</th:block>
+<th:block layout:fragment="page-script">
+    <script th:src="@{/js/public.sample.page.js}" type="text/javascript"></script>
+</th:block>
+</body>
+</html>

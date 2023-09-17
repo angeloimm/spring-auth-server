@@ -1,0 +1,80 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '* '
+  endpoint:
+    health:
+      enabled: 'true'
+      status:
+        http-mapping:
+          down: '500'
+          warning: '500'
+          out_of_service: '503'
+      probes:
+        enabled: 'true'
+      show-details: always
+    restart:
+      enabled: 'true'
+    info:
+      enabled: 'true'
+  health:
+    readinessstate:
+      enabled: 'true'
+    ping:
+      enabled: 'true'
+    livenessstate:
+      enabled: 'true'
+authorization:
+  server:
+    auth-server:
+      enable:
+        cors:
+          for: "http://localhost:4200, http://localhost:9099"
+          enabled: true
+      issuer:
+info:
+  app:
+    name: Test
+    version: 1.0.0
+    description: Sistema Test
+  java-vendor: ${java.specification.vendor}
+server:
+  servlet:
+    session:
+      tracking-modes: cookie
+    context-path: /auth-server
+  port: 9099
+spring:
+  main:
+    lazy-initialization: true
+  application:
+    name: auth-server
+
+logging:
+  #In order to retrieve traceId and spanId for correlation
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  file:
+    name: logs/auth-server.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/auth-server%d{yyyy-MM-dd}.%i.log.tar.gz
+      max-file-size: 10MB
+      total-size-cap: 200MB
+      max-history: 10
+  level:
+    org:
+      springframework:
+        web: INFO
+        security: TRACE
+          #oauth2:
+          #  server:
+        #    authorization: TRACE
+      springdoc: INFO
+    it:
+      eng: TRACE
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    use-root-path: true

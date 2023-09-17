@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<th:block layout:fragment="page-handlebars-template" th:if="${createDefaultUser}">
+    <script id="templateAddUser" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <h5 class="modal-title">{{modalTitle}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="column">
+                    <div class="alert alert-warning" role="alert" th:text="#{login.defaultAdminCreationMessage}"></div>
+                </div>
+            </div>
+            <form id="userForm" th:action="@{/protected/users/addDefaultAdmin}" method="POST">
+                <label th:text="#{user.username}"></label>
+                <input type="text" id="username" name="username" th:placeholder="#{user.username}"
+                       class="form-control col-4 mb-4" required>
+                <label th:text="#{user.name}"></label>
+                <input type="text" id="name" name="name" th:placeholder="#{user.name}" class="form-control col-4 mb-4"
+                       required>
+                <label th:text="#{user.lastname}"></label>
+                <input type="text" id="lastName" name="lastName" th:placeholder="#{user.lastname}"
+                       class="form-control col-4 mb-4" required>
+                <label th:text="#{user.mail}"></label>
+                <input type="text" id="email" name="email" th:placeholder="#{user.mail}" class="form-control col-4 mb-4"
+                       required>
+                <button type="submit" class="btn btn-primary col-2">Save</button>
+                <button type="reset" class="btn btn-secondary col-2">Reset</button>
+            </form>
+
+        </div>
+    </script>
+</th:block>
+<th:block layout:fragment="page-body">
+    <input id="createDefaultUser" th:value="${createDefaultUser}" type="hidden">
+    <div class="alert alert-danger" role="alert"
+         th:if="${SPRING_SECURITY_LAST_EXCEPTION !=null}" th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}">
+
+    </div>
+    <div class="alert alert-danger" role="alert" th:if="${param.error != null}" th:text="#{login.wrong.credentials}">
+
+    </div>
+    <div class="alert alert-danger" role="alert" th:if="${pntErrorCode!=null}" th:switch="${pntErrorCode}">
+
+        <p th:case="0" th:text="#{login.error.client.not.found(${pntClientId})}"></p>
+        <p th:case="1" th:text="#{login.error.redirect.uri.not.valid(${pntRedirectUri},${pntClientId})}"></p>
+        <p th:case="99" th:text="#{login.error.generic}"></p>
+    </div>
+    <div class="container login" th:if="${pntErrorCode==null}">
+        <h1 class="title-header text-center" th:text="#{login.title}"></h1>
+        <h3 class="title-header text-center" th:utext="#{login.accessTo(${pntApplicationName})}"></h3>
+        <ul class="nav nav-tabs justify-content-center" id="loginTab" role="tablist">
+            <li class="nav-item active">
+                <a aria-controls="repuglia" aria-selected="true" class="nav-link" data-toggle="tab" href="#repuglia"
+                   id="repuglia-tab" role="tab" th:text="#{common.applicationName}"></a>
+            </li>
+        </ul>
+        <h3 class="title-header text-center mt-3" th:text="#{login.accessByCredentials}">
+        </h3>
+    </div>
+    <form class="row g-3 needs-validation" method="post" novalidate
+          th:action="@{/login}" th:if="${pntErrorCode==null and !createDefaultUser}">
+        <input th:if="${_csrf != null}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+        <div class="input-group mb-3">
+            <span class="input-group-text username" id="basic-addon1"><img alt="Icon user"
+                                                                           class="icon-login-username"
+                                                                           src="images/person.svg"></span>
+            <input class="form-control" id="username" name="username" required
+                   th:placeholder="#{login.username.placeholder}" type="text">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text pwd" id="basic-addon2"><img alt="Icon password" class="icon-login-pwd"
+                                                                      src="images/lock.png"></span>
+            <input class="form-control" id="password" name="password" th:placeholder="#{login.password.placeholder}"
+                   type="password">
+        </div>
+        <div class="text-center">
+            <button class="btn btn-accedi" th:text="#{login.submit}" type="submit"></button>
+        </div>
+
+    </form>
+</th:block>
+<th:block layout:fragment="page-script">
+    <script th:src="@{/js/public.login.js}" type="text/javascript"></script>
+</th:block>
+</body>
+</html>
